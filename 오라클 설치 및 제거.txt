@@ -1,0 +1,59 @@
+■■■오라클 설치■■■
+Oracle 21c 최신버전
+Oracle 11g 설치완료
+
+eXpress Edition
+법적으로 완전 무료 버전이다
+기업체나 교육기관 등에서 무료로 사용이 가능한 버전이며
+프로그램 개발용으로는 충분하지만
+데이터베이스 서버용으로는 다소 부족한 기능을 가진 버전
+
+Strandard Edition, Standard Edition One, Data Ware House, Enterprise Edition
+다운로드는 가능하지만, 기업체나 교육기관 등에서 사용하게 되면
+사용 중 검열시 정식 라이센스를 제시할 수 있어야 한다.
+프로그램 개발용 뿐 아니라, 데이터베이스 서버용으로도
+충분한 기능을 가지고 있는 버전들이다.
+
+○기본적으로 설치 과정은 까다롭지 않다(11g eXpress Edition 기준)
+
+-기본 설치 경로 : C:\oraclexe
+-sys 계정 패스워드 설정 : java006$
+-port : 리스너 1521/ HTTP리스너 8080
+
+참고
+오라클 데이터베이스 파일 위치
+오라클 관련 프로그램이 설치되는 경로와
+관리되고 유지되는 데이터파일의 위치는
+물리적으로 다른 경로(C드라이브/D드라이브)를 선택하는 것을 권장한다
+
+
+
+■■■오라클 제거■■■
+1. 제어판 >프로그램 및 기능 → Oracle 관련 항목 제거
+2. 실행창 호출(윈도우키 + r) → services.msc 입력
+3. 서비스 리스트의 항목을 통해 확인하면 Oracle로 시작하는 서비스가 여러개 확인된다.
+즉, Oracle Server는 서비스를 기반으로 동작한다는 것이다.
+위에서 언급한 것 처럼 오라클 프로그램을 제거했다 하더라도 운영체제(OS) 상에서 오라클은 서비스로 동작하기 때문에
+이 오라클 서비스르 제거해 주어야한다.
+
+오라클 서비스를 제거하는 방법
+윈도우키+R 키 입력(실행찰 호출) → regedit 입력(레지스트리 편집기 호출)
+HKEY_LOCAL_MACHINE > SOFTWARE > ORACLE 항목 삭제(우클릭 ->삭제클릭)
+HKEY_LOCAL_MACHINE > SYSTEM > CurrentControlSet > serices
+->Orcale로 시작하는 모든 항목 삭제
+HKEY_LOCAL_MACHINE > SYSTEM > ControlSet001 > serices
+->Orcale로 시작하는 모든 항목 삭제
+HKEY_LOCAL_MACHINE > SYSTEM > ControlSet002 > serices
+->Orcale로 시작하는 모든 항목 삭제
+HKEY_LOCAL_MACHINE > SYSTEM > ControlSet003 > serices
+->Orcale로 시작하는 모든 항목 삭제
+
+변경된 레지스트리 정보가 적용되기 위해서는 반드시 재부팅을 해줘야한다.
+
+재부팅 이후 윈도우탐색기에서 오라클 홈과 관련된 모든 내용을
+물리적으로 삭제한다.
+
+또한 데이터 파일 경로 및 설치 결로의 모든 디렉터리와 파일들을 물리적으로
+삭제할 수 있도록한다
+
+여기까지 모든 과정을 수행해야 Oracle Server는 깨끗하게 제거된다.
